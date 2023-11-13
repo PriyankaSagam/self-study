@@ -6,10 +6,11 @@ import products from './data'
 
 function App() {
   console.log(products)
-  const isHiring = true;
+  //const ishiring = true;
   // add state in here
   const [productList, setProductList] = useState(products)
   const [value, setValue] = useState("");
+   const [ishiring,setIsHiring]=useState(true)
 
   const [form, setForm] = useState({
     itemName: "",
@@ -40,13 +41,14 @@ function App() {
     })
     }
 
-const toggleHiring = () => { setIsHiring(!isHiring) }
+const toggleHiring = () => { setIsHiring(!ishiring) }
   
   // return
   return (
 
     <div>
-       <h1 onClick={toggleHiring}> Big Time Shopping </h1> {isHiring ? <h2>Yes, we are hiring </h2>: <h2>Sorry, try again tomorrow</h2>}
+       <h1 onClick={toggleHiring}> Big Time Shopping </h1>
+        {ishiring ? <h2>Yes, we are hiring </h2>: <h2>Sorry, try again tomorrow</h2>}
        
        <form onSubmit={handleSubmit}>  
          <input
